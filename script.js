@@ -1,14 +1,31 @@
 // script.js
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile Navigation Toggle
-    const navHeader = document.querySelector('.nav-header');
+    const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     
-    if (window.innerWidth <= 768) {
-        navHeader.addEventListener('click', () => {
-            navLinks.classList.toggle('show');
+    menuToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('show');
+        // Change menu icon
+        const menuIcon = this.querySelector('.menu-icon');
+        menuIcon.textContent = navLinks.classList.contains('show') ? '✕' : '☰';
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.nav-links') && !e.target.closest('.menu-toggle')) {
+            navLinks.classList.remove('show');
+            document.querySelector('.menu-icon').textContent = '☰';
+        }
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('show');
+            document.querySelector('.menu-icon').textContent = '☰';
         });
-    }
+    });
 
     // Announcement Slider
     const announcements = document.querySelectorAll('.announcement');
