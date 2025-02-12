@@ -92,7 +92,62 @@ body {
 .nav-links a:hover {
     color: var(--brand-light-blue);
 }
+/* After your existing nav styles and before Hero Section */
 
+/* Mobile Menu Styles */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    padding: 10px;
+}
+
+.menu-icon {
+    color: var(--brand-blue);
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .nav-links li {
+        width: 100%;
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 15px 20px;
+        text-align: left;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .main-nav {
+        justify-content: space-between;
+    }
+
+    .nav-brand {
+        flex-direction: row;
+        align-items: center;
+    }
+}
 /* Hero Section */
 .hero-section {
     background: linear-gradient(rgba(30, 77, 135, 0.9), rgba(70, 130, 180, 0.8)),
