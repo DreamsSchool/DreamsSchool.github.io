@@ -1732,3 +1732,50 @@ footer {
         order: -1;
     }
 }
+
+/* Add these rules to your CSS file to ensure consistent text colors */
+
+/* For main content text */
+p, li, td, th, label, input, select, textarea {
+    color: var(--text-light);
+}
+
+/* For headings in content areas */
+.highlights h3, 
+.facility-item h3, 
+.curriculum-item h3, 
+.assessment-item h3, 
+.support-item h3,
+.approach-feature h3,
+.showcase-content h3,
+.safety-item h3,
+.amenity-item h3,
+.process-step h3,
+.enquiry-form h3,
+.contact-form h3,
+.faq-question h3 {
+    color: var(--brand-blue);
+}
+
+/* For section headings */
+h2 {
+    color: var(--brand-blue);
+}
+
+/* For form elements focus state */
+input:focus, select:focus, textarea:focus {
+    border-color: var(--brand-light-blue);
+    outline: none;
+}
+
+/* Ensure all links have consistent styling */
+a:not(.nav-links a):not(.social-link):not(.cta-button):not(.download-button):not(.submit-button):not(.view-more):not(.footer-section a) {
+    color: var(--brand-light-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:not(.nav-links a):not(.social-link):not(.cta-button):not(.download-button):not(.submit-button):not(.view-more):not(.footer-section a):hover {
+    color: var(--brand-blue);
+    text-decoration: underline;
+}
