@@ -156,3 +156,29 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+// Add this to your existing script.js file
+
+// FAQ Toggle Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        const icon = item.querySelector('.faq-icon');
+        
+        // Initially hide all answers
+        answer.style.display = 'none';
+        
+        question.addEventListener('click', () => {
+            // Toggle the answer visibility
+            if (answer.style.display === 'none') {
+                answer.style.display = 'block';
+                icon.textContent = '−'; // Change to minus sign
+            } else {
+                answer.style.display = 'none';
+                icon.textContent = '+'; // Change back to plus sign
+            }
+        });
+    });
+});
