@@ -1870,3 +1870,35 @@ a:not(.nav-links a):not(.cta-button):not(.download-button):not(.submit-button):n
 .direction-link {
     color: var(--brand-light-blue);
 }
+/* Footer text color fix */
+footer,
+footer p,
+footer div,
+footer span,
+footer h3,
+.footer-section p,
+.footer-content p,
+.footer-bottom p {
+    color: white !important;
+}
+
+.footer-section a,
+.footer-content a,
+.social-links a {
+    color: white !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover,
+.footer-content a:hover,
+.social-links a:hover {
+    color: var(--brand-accent) !important;
+    text-decoration: underline;
+}
+
+/* Ensure visibility with higher specificity */
+.footer-section h3 {
+    color: var(--brand-accent) !important;
+    margin-bottom: 20px;
+}
