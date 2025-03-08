@@ -1779,3 +1779,94 @@ a:not(.nav-links a):not(.social-link):not(.cta-button):not(.download-button):not
     color: var(--brand-blue);
     text-decoration: underline;
 }
+/* ===== GLOBAL TEXT COLOR FIXES ===== */
+
+/* General text color for all content areas */
+p, li, td, th, label, div:not(.nav-header):not(.hero-section *):not(.footer-section *):not(.highlight-item h3):not(.assessment-icon):not(.safety-icon):not(.contact-icon):not(.faq-icon):not(.step-number) {
+    color: var(--text-light);
+}
+
+/* Ensure all headings use brand colors */
+h2, h3, h4, h5, h6 {
+    color: var(--brand-blue);
+}
+
+/* Specific fixes for each page type */
+
+/* Academics page */
+.approach-content p,
+.approach-feature p,
+.assessment-item p,
+.support-item p,
+.curriculum-item p,
+.curriculum-item li,
+.methodology-content p,
+.methodology-text li {
+    color: var(--text-light);
+}
+
+/* Facilities page */
+.showcase-content p,
+.showcase-content li,
+.facility-item p,
+.safety-item p,
+.amenity-item p {
+    color: var(--text-light);
+}
+
+/* Admissions page */
+.admissions-content p:not(.admissions-highlight p),
+.process-step p,
+.step-content p,
+.document-list li,
+.age-row span,
+.fee-note p,
+.contact-overlay p {
+    color: var(--text-light);
+}
+
+/* Contact page */
+.contact-item p,
+.contact-intro p,
+.faq-answer p,
+.social-overlay p {
+    color: var(--text-light);
+}
+
+/* About page */
+.vision p, 
+.mission p,
+.history-text p,
+.value-item p,
+.leader-info p:not(.principal-name) {
+    color: var(--text-light);
+}
+
+/* Form elements */
+input, select, textarea {
+    color: var(--text-dark);
+}
+
+/* Exceptions - elements that should remain white */
+.hero-section *,
+.admissions-highlight *,
+.step-number,
+.faq-question *,
+.contact-overlay *,
+.social-overlay *,
+.download-button,
+.submit-button,
+.view-more:hover,
+footer * {
+    color: white;
+}
+
+/* Links that aren't buttons */
+a:not(.nav-links a):not(.cta-button):not(.download-button):not(.submit-button):not(.view-more):not(.footer-section a):not(.direction-link) {
+    color: var(--brand-light-blue);
+}
+
+/* Direction link specific styling */
+.direction-link {
+    color: var(--brand-light-blue);
+}
