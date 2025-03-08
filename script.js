@@ -182,3 +182,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+// Enhanced FAQ functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('.faq-enhanced-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-enhanced-question');
+        
+        question.addEventListener('click', () => {
+            // Toggle active class
+            item.classList.toggle('active');
+            
+            // Close other items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                }
+            });
+        });
+    });
+});
