@@ -20,7 +20,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background: var(--main-bg);
-    color: var(--text-dark);
+    color: var(--text-light);
     line-height: 1.6;
 }
 
@@ -92,7 +92,6 @@ body {
 .nav-links a:hover {
     color: var(--brand-light-blue);
 }
-/* After your existing nav styles and before Hero Section */
 
 /* Mobile Menu Styles */
 .menu-toggle {
@@ -148,6 +147,7 @@ body {
         align-items: center;
     }
 }
+
 /* Hero Section */
 .hero-section {
     background: linear-gradient(rgba(30, 77, 135, 0.9), rgba(70, 130, 180, 0.8)),
@@ -170,18 +170,21 @@ body {
     font-weight: 600;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    color: white;
 }
 
 .subtitle {
     font-size: 1.4em;
     font-weight: 300;
     letter-spacing: 1px;
+    color: white;
 }
 
 .subtitle p {
     margin-top: 15px;
     font-size: 0.9em;
     opacity: 0.9;
+    color: white;
 }
 
 /* Announcements */
@@ -209,6 +212,10 @@ body {
     border-left: 4px solid var(--brand-blue);
     border-radius: 5px;
     margin: 10px 0;
+}
+
+.announcement p {
+    color: var(--text-dark);
 }
 
 /* Highlights */
@@ -256,6 +263,10 @@ body {
 .highlight-item h3 {
     color: var(--brand-blue);
     margin-bottom: 15px;
+}
+
+.highlight-item p, .highlight-item li {
+    color: var(--text-light);
 }
 
 /* Gallery Preview */
@@ -311,7 +322,7 @@ body {
 /* Footer */
 footer {
     background: var(--brand-blue);
-    color: white;
+    color: white !important;
     padding: 60px 5% 20px;
 }
 
@@ -324,7 +335,7 @@ footer {
 }
 
 .footer-section h3 {
-    color: var(--brand-accent);
+    color: var(--brand-accent) !important;
     margin-bottom: 20px;
 }
 
@@ -333,13 +344,18 @@ footer {
 }
 
 .footer-section a {
-    color: white;
+    color: white !important;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .footer-section a:hover {
-    color: var(--brand-accent);
+    color: var(--brand-accent) !important;
+    text-decoration: underline;
+}
+
+.footer-section p {
+    color: white !important;
 }
 
 .footer-bottom {
@@ -349,800 +365,10 @@ footer {
     border-top: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-brand {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .school-logo {
-        height: 40px;
-    }
-
-    .nav-header {
-        font-size: 1.1em;
-    }
-
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: var(--header-height);
-        left: 0;
-        width: 100%;
-        background: white;
-        flex-direction: column;
-        padding: 20px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .nav-links.show {
-        display: flex;
-    }
-
-    .hero-section h1 {
-        font-size: 2.5em;
-    }
-
-    .subtitle {
-        font-size: 1.2em;
-    }
-
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .highlight-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Animation Classes */
-.highlight-item, .gallery-item {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.highlight-item.animate, .gallery-item.animate {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* About Page Styles */
-.about-content {
-    padding: 60px 5%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.vision-mission {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    margin-bottom: 60px;
-}
-
-.vision, .mission {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    border-top: 3px solid var(--brand-blue);
-}
-
-.vision h2, .mission h2 {
-    color: var(--brand-blue);
-    margin-bottom: 20px;
-    font-size: 1.8em;
-}
-
-.school-history {
-    margin-bottom: 60px;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.school-history h2 {
-    color: var(--brand-blue);
-    margin-bottom: 30px;
-    font-size: 2em;
-    text-align: center;
-}
-
-.history-text p {
-    margin-bottom: 20px;
-    line-height: 1.8;
-    text-align: center;
-}
-
-.core-values {
-    margin-bottom: 60px;
-}
-
-.core-values h2 {
-    color: var(--brand-blue);
-    margin-bottom: 30px;
-    font-size: 2em;
-    text-align: center;
-}
-
-.values-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-.value-item {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.value-item:hover {
-    transform: translateY(-5px);
-}
-
-.value-item h3 {
-    color: var(--brand-blue);
-    margin-bottom: 15px;
-}
-
-.leadership {
-    margin-bottom: 60px;
-}
-
-.leadership h2 {
-    color: var(--brand-blue);
-    margin-bottom: 30px;
-    font-size: 2em;
-    text-align: center;
-}
-
-.leader-info {
-    background: white;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.leader-info h3 {
-    color: var(--brand-blue);
-    margin-bottom: 20px;
-    font-size: 1.5em;
-}
-
-.leader-info p {
-    line-height: 1.8;
-    font-style: italic;
-}
-
-.principal-name {
-    margin-top: 20px;
-    color: var(--brand-blue);
-    font-weight: 500;
-}
-
-/* Responsive Design for About Page */
-@media (max-width: 768px) {
-    .vision-mission {
-        grid-template-columns: 1fr;
-    }
-
-    .values-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Gallery Page Styles */
-.gallery-container {
-    padding: 60px 5%;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.gallery-filters {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.filter-btn {
-    background: none;
-    border: 2px solid var(--brand-blue);
-    color: var(--brand-blue);
-    padding: 10px 20px;
-    margin: 0 10px;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.9em;
-}
-
-.filter-btn.active,
-.filter-btn:hover {
-    background: var(--brand-blue);
-    color: white;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.gallery-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    cursor: pointer;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.gallery-item:hover img {
-    transform: scale(1.05);
-}
-
-.gallery-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(30, 77, 135, 0.9);
-    color: white;
-    padding: 15px;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
-}
-
-.gallery-item:hover .gallery-caption {
-    transform: translateY(0);
-}
-
-/* Lightbox Styles */
-.lightbox {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    z-index: 1100;
-    padding: 40px;
-}
-
-.lightbox.active {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.lightbox-image {
-    max-width: 90%;
-    max-height: 80vh;
-    object-fit: contain;
-}
-
-.close-lightbox {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: white;
-    font-size: 40px;
-    cursor: pointer;
-}
-
-.lightbox-caption {
-    color: white;
-    margin-top: 20px;
-    font-size: 1.2em;
-}
-
-/* Responsive Design for Gallery */
-@media (max-width: 768px) {
-    .gallery-filters {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .filter-btn {
-        margin: 5px;
-    }
-
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Academic Page Styles */
-.academics-content {
-    padding: 60px 5%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.curriculum-section, .teaching-methodology, .assessment-system, .academic-achievements {
-    margin-bottom: 60px;
-}
-
-.academics-content h2 {
-    color: var(--brand-blue);
-    margin-bottom: 30px;
-    font-size: 2em;
-    text-align: center;
-}
-
-.curriculum-grid, .assessment-grid, .support-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.curriculum-item, .assessment-item, .support-item {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-.curriculum-item:hover, .assessment-item:hover, .support-item:hover {
-    transform: translateY(-5px);
-}
-
-.curriculum-item h3, .assessment-item h3, .support-item h3 {
-    color: var(--brand-blue);
-    margin-bottom: 15px;
-    font-size: 1.4em;
-}
-
-.curriculum-item ul {
-    list-style-type: disc;
-    padding-left: 20px;
-}
-
-.curriculum-item ul li {
-    margin-bottom: 10px;
-}
-
-.methodology-content {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.methodology-text ul {
-    list-style-type: disc;
-    padding-left: 20px;
-    margin-top: 15px;
-}
-
-.methodology-text ul li {
-    margin-bottom: 10px;
-}
-
-/* Facilities Page Styles */
-.facilities-content {
-    padding: 60px 5%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.facility-intro {
-    text-align: center;
-    margin-bottom: 40px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.facilities-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-bottom: 60px;
-}
-
-.facility-item {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    text-align: center;
-}
-
-.facility-item:hover {
-    transform: translateY(-5px);
-}
-
-.facility-item h3 {
-    color: var(--brand-blue);
-    margin-bottom: 15px;
-    font-size: 1.4em;
-}
-
-.safety-measures, .additional-facilities {
-    margin-bottom: 60px;
-}
-
-.safety-measures h2, .additional-facilities h2 {
-    color: var(--brand-blue);
-    margin-bottom: 30px;
-    font-size: 2em;
-    text-align: center;
-}
-
-.safety-grid, .amenities-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-.safety-item, .amenity-item {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    text-align: center;
-}
-
-.safety-item:hover, .amenity-item:hover {
-    transform: translateY(-5px);
-}
-
-.safety-item h3, .amenity-item h3 {
-    color: var(--brand-blue);
-    margin-bottom: 15px;
-    font-size: 1.4em;
-}
-
-/* Admissions Page Styles */
-.admissions-content {
-    padding: 60px 5%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.admissions-intro {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.admissions-intro h2 {
-    color: var(--brand-blue);
-    margin-bottom: 20px;
-    font-size: 2em;
-}
-
-.admissions-highlight {
-    background: var(--brand-blue);
-    color: white;
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    margin-bottom: 40px;
-}
-
-.admissions-highlight h3 {
-    font-size: 1.4em;
-    margin-bottom: 10px;
-}
-
-.admission-steps, .required-documents, .age-criteria, .fee-structure, .admission-enquiry {
-    margin-bottom: 60px;
-}
-
-.admission-steps h2, .required-documents h2, .age-criteria h2, .fee-structure h2, .admission-enquiry h2 {
-    color: var(--brand-blue);
-    margin-bottom: 30px;
-    font-size: 2em;
-    text-align: center;
-}
-
-.steps-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-.step-item {
-    display: flex;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.step-number {
-    background: var(--brand-blue);
-    color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-right: 20px;
-    flex-shrink: 0;
-}
-
-.step-content h3 {
-    color: var(--brand-blue);
-    margin-bottom: 10px;
-    font-size: 1.4em;
-}
-
-.document-list {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    list-style-type: disc;
-    padding-left: 50px;
-}
-
-.document-list li {
-    margin-bottom: 10px;
-}
-
-.age-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.age-item {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.age-item h3 {
-    color: var(--brand-blue);
-    margin-bottom: 10px;
-    font-size: 1.2em;
-}
-
-.fee-note {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.download-button {
-    display: inline-block;
-    background: var(--brand-blue);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-top: 20px;
-    text-decoration: none;
-    transition: background 0.3s ease;
+.footer-bottom p {
+    color: white !important;
 }
 
-.download-button:hover {
-    background: var(--brand-light-blue);
-}
-
-.enquiry-form {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-    color: var(--text-dark);
-}
-
-.form-group input, .form-group select, .form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.submit-button {
-    background: var(--brand-blue);
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: background 0.3s ease;
-}
-
-.submit-button:hover {
-    background: var(--brand-light-blue);
-}
-
-/* Contact Page Styles */
-.contact-content {
-    padding: 60px 5%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.contact-intro {
-    text-align: center;
-    margin-bottom: 40px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.contact-details-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    margin-bottom: 60px;
-}
-
-.contact-details {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-.contact-item {
-    background: white;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.contact-item h3 {
-    color: var(--brand-blue);
-    margin-bottom: 15px;
-    font-size: 1.3em;
-}
-
-.map-container {
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.contact-form-section, .social-connect, .faq-section {
-    margin-bottom: 60px;
-}
-
-.contact-form-section h2, .social-connect h2, .faq-section h2 {
-    color: var(--brand-blue);
-    margin-bottom: 30px;
-    font-size: 2em;
-    text-align: center;
-}
-
-.contact-form {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-bottom: 20px;
-}
-
-.social-links-large {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 20px;
-}
-
-.social-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: var(--text-dark);
-    transition: transform 0.3s ease;
-}
-
-.social-link:hover {
-    transform: translateY(-5px);
-}
-
-.social-link img {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 10px;
-}
-
-.faq-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.faq-item {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
-    overflow: hidden;
-}
-
-.faq-question {
-    padding: 20px;
-    background: var(--brand-blue);
-    color: white;
-    font-weight: 500;
-    cursor: pointer;
-}
-
-.faq-answer {
-    padding: 20px;
-    border-top: 1px solid #eee;
-}
-
-/* Responsive Design for All Pages */
-@media (max-width: 768px) {
-    .curriculum-grid, .assessment-grid, .support-grid,
-    .facilities-grid, .safety-grid, .amenities-grid,
-    .steps-grid, .age-grid, .contact-details-wrapper {
-        grid-template-columns: 1fr;
-    }
-
-    .form-row {
-        grid-template-columns: 1fr;
-        gap: 0;
-    }
-
-    .contact-details {
-        order: 2;
-    }
-
-    .map-container {
-        order: 1;
-    }
-
-    .social-links-large {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-}
 /* Common Section Styles for All Pages */
 .teaching-approach,
 .assessment-section,
@@ -1192,6 +418,7 @@ footer {
 .approach-text p {
     margin-bottom: 30px;
     line-height: 1.8;
+    color: var(--text-light);
 }
 
 .approach-features {
@@ -1212,6 +439,10 @@ footer {
     color: var(--brand-blue);
     margin-bottom: 10px;
     font-size: 1.2em;
+}
+
+.approach-feature p {
+    color: var(--text-light);
 }
 
 .assessment-grid {
@@ -1246,6 +477,10 @@ footer {
     font-size: 1.4em;
 }
 
+.assessment-item p {
+    color: var(--text-light);
+}
+
 .support-wrapper {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
@@ -1258,6 +493,7 @@ footer {
 .support-content p {
     margin-bottom: 30px;
     line-height: 1.8;
+    color: var(--text-light);
 }
 
 .support-grid {
@@ -1278,6 +514,10 @@ footer {
     color: var(--brand-blue);
     margin-bottom: 10px;
     font-size: 1.2em;
+}
+
+.support-item p {
+    color: var(--text-light);
 }
 
 .support-image img {
@@ -1319,6 +559,7 @@ footer {
 .showcase-content p {
     margin-bottom: 20px;
     line-height: 1.8;
+    color: var(--text-light);
 }
 
 .showcase-content ul {
@@ -1329,372 +570,24 @@ footer {
 .showcase-content ul li {
     margin-bottom: 10px;
     line-height: 1.6;
+    color: var(--text-light);
 }
 
-.safety-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 30px auto 0;
+/* Contact, Admissions, and other pages */
+.contact-item p,
+.contact-intro p,
+.admissions-content p:not(.admissions-highlight p),
+.process-step p,
+.step-content p,
+.facility-item p,
+.safety-item p,
+.amenity-item p,
+.document-list li,
+.faq-answer p {
+    color: var(--text-light);
 }
 
-.safety-item {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.safety-item:hover {
-    transform: translateY(-5px);
-}
-
-.safety-icon {
-    font-size: 2em;
-    margin-bottom: 15px;
-}
-
-.safety-item h3 {
-    color: var(--brand-blue);
-    margin-bottom: 15px;
-    font-size: 1.4em;
-}
-
-.amenities-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 40px;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.amenities-image img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.amenities-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.amenity-item {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    border-top: 3px solid var(--brand-blue);
-}
-
-.amenity-item h3 {
-    color: var(--brand-blue);
-    margin-bottom: 10px;
-    font-size: 1.2em;
-}
-
-/* Admissions Page Styles */
-.process-content {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 40px;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.process-image img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.process-step {
-    display: flex;
-    margin-bottom: 30px;
-    align-items: flex-start;
-}
-
-.step-number {
-    background: var(--brand-blue);
-    color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-right: 20px;
-    flex-shrink: 0;
-}
-
-.step-content h3 {
-    color: var(--brand-blue);
-    margin-bottom: 10px;
-    font-size: 1.4em;
-}
-
-.document-list {
-    list-style-type: disc;
-    padding-left: 20px;
-}
-
-.document-list li {
-    margin-bottom: 10px;
-    line-height: 1.6;
-}
-
-.age-list {
-    margin-top: 20px;
-}
-
-.age-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
-}
-
-.age-class {
-    font-weight: 500;
-}
-
-.download-button {
-    display: inline-block;
-    background: var(--brand-blue);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-top: 20px;
-    text-decoration: none;
-    transition: background 0.3s ease;
-}
-
-.download-button:hover {
-    background: var(--brand-light-blue);
-}
-
-.enquiry-container {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.enquiry-form {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-bottom: 20px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-    color: var(--text-dark);
-}
-
-.form-group input, .form-group select, .form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.submit-button {
-    background: var(--brand-blue);
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: background 0.3s ease;
-    font-size: 1em;
-}
-
-.submit-button:hover {
-    background: var(--brand-light-blue);
-}
-
-.enquiry-image {
-    position: relative;
-}
-
-.enquiry-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.contact-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(30, 77, 135, 0.9);
-    color: white;
-    padding: 20px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-.contact-overlay h3 {
-    margin-bottom: 10px;
-    font-size: 1.2em;
-}
-
-.contact-overlay p {
-    margin-bottom: 5px;
-}
-
-/* Contact Page Styles */
-.contact-map-section {
-    padding: 0;
-}
-
-.map-container {
-    height: 450px;
-    overflow: hidden;
-}
-
-.contact-icon {
-    font-size: 2em;
-    margin-bottom: 15px;
-}
-
-.direction-link {
-    display: inline-block;
-    margin-top: 15px;
-    color: var(--brand-blue);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.direction-link:hover {
-    color: var(--brand-light-blue);
-    text-decoration: underline;
-}
-
-.form-container {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.form-image {
-    position: relative;
-}
-
-.form-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.social-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(30, 77, 135, 0.9);
-    color: white;
-    padding: 20px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    text-align: center;
-}
-
-.social-overlay h3 {
-    margin-bottom: 15px;
-    font-size: 1.2em;
-}
-
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.social-icon img {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s ease;
-}
-
-.social-icon:hover img {
-    transform: scale(1.1);
-}
-
-.faq-container {
-    max-width: 800px;
-    margin: 30px auto 0;
-}
-
-.faq-item {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
-    overflow: hidden;
-}
-
-.faq-question {
-    padding: 20px;
-    background: var(--brand-blue);
-    color: white;
-    font-weight: 500;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-}
-
-.faq-icon {
-    margin-right: 15px;
-    font-size: 1.2em;
-    transition: transform 0.3s ease;
-}
-
-.faq-question h3 {
-    margin: 0;
-    font-size: 1.2em;
-}
-
-.faq-answer {
-    padding: 20px;
-    border-top: 1px solid #eee;
-    line-height: 1.6;
-}
-
-/* Responsive Design for All Pages */
+/* Responsive Design */
 @media (max-width: 992px) {
     .approach-content,
     .support-wrapper,
@@ -1718,6 +611,45 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .nav-brand {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .school-logo {
+        height: 40px;
+    }
+
+    .nav-header {
+        font-size: 1.1em;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5em;
+    }
+
+    .subtitle {
+        font-size: 1.2em;
+    }
+
+    .gallery-grid,
+    .highlight-grid,
     .form-row {
         grid-template-columns: 1fr;
     }
@@ -1733,205 +665,40 @@ footer {
     }
 }
 
-/* Add these rules to your CSS file to ensure consistent text colors */
-
-/* For main content text */
-p, li, td, th, label, input, select, textarea {
-    color: var(--text-light);
+/* Animation Classes */
+.highlight-item, .gallery-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* For headings in content areas */
-.highlights h3, 
-.facility-item h3, 
-.curriculum-item h3, 
-.assessment-item h3, 
-.support-item h3,
-.approach-feature h3,
-.showcase-content h3,
-.safety-item h3,
-.amenity-item h3,
-.process-step h3,
-.enquiry-form h3,
-.contact-form h3,
-.faq-question h3 {
-    color: var(--brand-blue);
+.highlight-item.animate, .gallery-item.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* For section headings */
-h2 {
-    color: var(--brand-blue);
+/* Special Elements */
+.step-number,
+.faq-question,
+.download-button,
+.submit-button,
+.view-more:hover,
+.contact-overlay *,
+.social-overlay * {
+    color: white !important;
 }
 
-/* For form elements focus state */
-input:focus, select:focus, textarea:focus {
-    border-color: var(--brand-light-blue);
-    outline: none;
+.admissions-highlight p,
+.admissions-highlight h3 {
+    color: white !important;
 }
 
-/* Ensure all links have consistent styling */
-a:not(.nav-links a):not(.social-link):not(.cta-button):not(.download-button):not(.submit-button):not(.view-more):not(.footer-section a) {
-    color: var(--brand-light-blue);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:not(.nav-links a):not(.social-link):not(.cta-button):not(.download-button):not(.submit-button):not(.view-more):not(.footer-section a):hover {
-    color: var(--brand-blue);
-    text-decoration: underline;
-}
-/* ===== GLOBAL TEXT COLOR FIXES ===== */
-
-/* General text color for all content areas */
-p, li, td, th, label, div:not(.nav-header):not(.hero-section *):not(.footer-section *):not(.highlight-item h3):not(.assessment-icon):not(.safety-icon):not(.contact-icon):not(.faq-icon):not(.step-number) {
-    color: var(--text-light);
-}
-
-/* Ensure all headings use brand colors */
-h2, h3, h4, h5, h6 {
-    color: var(--brand-blue);
-}
-
-/* Specific fixes for each page type */
-
-/* Academics page */
-.approach-content p,
-.approach-feature p,
-.assessment-item p,
-.support-item p,
-.curriculum-item p,
-.curriculum-item li,
-.methodology-content p,
-.methodology-text li {
-    color: var(--text-light);
-}
-
-/* Facilities page */
-.showcase-content p,
-.showcase-content li,
-.facility-item p,
-.safety-item p,
-.amenity-item p {
-    color: var(--text-light);
-}
-
-/* Admissions page */
-.admissions-content p:not(.admissions-highlight p),
-.process-step p,
-.step-content p,
-.document-list li,
-.age-row span,
-.fee-note p,
-.contact-overlay p {
-    color: var(--text-light);
-}
-
-/* Contact page */
-.contact-item p,
-.contact-intro p,
-.faq-answer p,
-.social-overlay p {
-    color: var(--text-light);
-}
-
-/* About page */
-.vision p, 
-.mission p,
-.history-text p,
-.value-item p,
-.leader-info p:not(.principal-name) {
-    color: var(--text-light);
-}
-
-/* Form elements */
+/* Form Elements */
 input, select, textarea {
     color: var(--text-dark);
 }
 
-/* Exceptions - elements that should remain white */
-.hero-section *,
-.admissions-highlight *,
-.step-number,
-.faq-question *,
-.contact-overlay *,
-.social-overlay *,
-.download-button,
-.submit-button,
-.view-more:hover,
-footer * {
-    color: white;
-}
-
-/* Links that aren't buttons */
-a:not(.nav-links a):not(.cta-button):not(.download-button):not(.submit-button):not(.view-more):not(.footer-section a):not(.direction-link) {
-    color: var(--brand-light-blue);
-}
-
-/* Direction link specific styling */
-.direction-link {
-    color: var(--brand-light-blue);
-}
-/* Footer text color fix */
-footer,
-footer p,
-footer div,
-footer span,
-footer h3,
-.footer-section p,
-.footer-content p,
-.footer-bottom p {
-    color: white !important;
-}
-
-.footer-section a,
-.footer-content a,
-.social-links a {
-    color: white !important;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-section a:hover,
-.footer-content a:hover,
-.social-links a:hover {
-    color: var(--brand-accent) !important;
-    text-decoration: underline;
-}
-
-/* Ensure visibility with higher specificity */
-.footer-section h3 {
-    color: var(--brand-accent) !important;
-    margin-bottom: 20px;
-}
-
-/* Footer text color fix */
-footer,
-footer p,
-footer div,
-footer span,
-footer h3,
-.footer-section p,
-.footer-content p,
-.footer-bottom p {
-    color: white !important;
-}
-
-.footer-section a,
-.footer-content a,
-.social-links a {
-    color: white !important;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-section a:hover,
-.footer-content a:hover,
-.social-links a:hover {
-    color: var(--brand-accent) !important;
-    text-decoration: underline;
-}
-
-/* Ensure visibility with higher specificity */
-.footer-section h3 {
-    color: var(--brand-accent) !important;
-    margin-bottom: 20px;
+input:focus, select:focus, textarea:focus {
+    border-color: var(--brand-light-blue);
+    outline: none;
 }
