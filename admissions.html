@@ -153,26 +153,26 @@
     <div class="admission-enquiry-section">
     <h2>Admission Enquiry</h2>
     <div class="enquiry-container">
-        <div class="enquiry-form">
-            <form name="admission-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <div class="enquiry-form-wrapper">
+            <form name="admission-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="enquiry-form">
                 <p class="hidden">
                     <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                 </p>
                 <input type="hidden" name="form-name" value="admission-enquiry">
                 
-                <div class="form-row">
+                <div class="form-grid">
                     <div class="form-group">
-                        <label for="student-name">Student's Name</label>
-                        <input type="text" id="student-name" name="student-name" required>
+                        <label for="student-name">Student's Name <span class="required">*</span></label>
+                        <input type="text" id="student-name" name="student-name" placeholder="Enter student's full name" required>
                     </div>
+                    
                     <div class="form-group">
-                        <label for="parent-name">Parent's Name</label>
-                        <input type="text" id="parent-name" name="parent-name" required>
+                        <label for="parent-name">Parent's Name <span class="required">*</span></label>
+                        <input type="text" id="parent-name" name="parent-name" placeholder="Enter parent's full name" required>
                     </div>
-                </div>
-                <div class="form-row">
+                
                     <div class="form-group">
-                        <label for="grade-applying">Grade Applying For</label>
+                        <label for="grade-applying">Grade Applying For <span class="required">*</span></label>
                         <select id="grade-applying" name="grade-applying" required>
                             <option value="">Select Class</option>
                             <option value="Nursery">Nursery</option>
@@ -192,30 +192,48 @@
                             <option value="XII">Class XII</option>
                         </select>
                     </div>
+                    
                     <div class="form-group">
-                        <label for="phone">Contact Number</label>
-                        <input type="tel" id="phone" name="phone" required>
+                        <label for="phone">Contact Number <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter 10-digit mobile number" required>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
+                
+                <div class="form-group full-width">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
                 </div>
-                <div class="form-group">
+                
+                <div class="form-group full-width">
                     <label for="message">Any Specific Query</label>
-                    <textarea id="message" name="message" rows="4"></textarea>
+                    <textarea id="message" name="message" rows="4" placeholder="Please share any specific questions or information about the student"></textarea>
                 </div>
-                <button type="submit" class="submit-button">Submit Enquiry</button>
+                
+                <div class="form-footer">
+                    <p class="form-note"><span class="required">*</span> Indicates required fields</p>
+                    <button type="submit" class="submit-button">Submit Enquiry</button>
+                </div>
             </form>
+            
+            <div class="contact-info-card">
+                <h3>Contact Admissions Office</h3>
+                <div class="contact-info-item">
+                    <i class="contact-icon">📞</i>
+                    <p>+91-9694200694</p>
+                </div>
+                <div class="contact-info-item">
+                    <i class="contact-icon">✉️</i>
+                    <p>admissions@dreamsschool.com</p>
+                </div>
+                <div class="contact-info-item">
+                    <i class="contact-icon">🕒</i>
+                    <p>Monday to Friday (9:00 AM - 3:00 PM)</p>
+                </div>
+            </div>
         </div>
+        
         <div class="enquiry-image">
             <img src="images/admission-enquiry.jpg" alt="Admission Enquiry">
-            <div class="contact-overlay">
-                <h3>Contact Admissions Office</h3>
-                <p>Phone: +91-9694200694</p>
-                <p>Email: admissions@dreamsschool.com</p>
-                <p>Timings: Monday to Friday (9:00 AM - 3:00 PM)</p>
-            </div>
         </div>
     </div>
 </div>
