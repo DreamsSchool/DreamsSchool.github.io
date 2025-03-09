@@ -151,70 +151,74 @@
     </div>
 
     <div class="admission-enquiry-section">
-        <h2>Admission Enquiry</h2>
-        <div class="enquiry-container">
-            <div class="enquiry-form">
-                <form action="#" method="post">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="student-name">Student's Name</label>
-                            <input type="text" id="student-name" name="student-name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="parent-name">Parent's Name</label>
-                            <input type="text" id="parent-name" name="parent-name" required>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="grade-applying">Grade Applying For</label>
-                            <select id="grade-applying" name="grade-applying" required>
-                                <option value="">Select Class</option>
-                                <option value="Nursery">Nursery</option>
-                                <option value="LKG">LKG</option>
-                                <option value="UKG">UKG</option>
-                                <option value="I">Class I</option>
-                                <option value="II">Class II</option>
-                                <option value="III">Class III</option>
-                                <option value="IV">Class IV</option>
-                                <option value="V">Class V</option>
-                                <option value="VI">Class VI</option>
-                                <option value="VII">Class VII</option>
-                                <option value="VIII">Class VIII</option>
-                                <option value="IX">Class IX</option>
-                                <option value="X">Class X</option>
-                                <option value="XI">Class XI</option>
-                                <option value="XII">Class XII</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Contact Number</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
+    <h2>Admission Enquiry</h2>
+    <div class="enquiry-container">
+        <div class="enquiry-form">
+            <form name="admission-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <p class="hidden">
+                    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                </p>
+                <input type="hidden" name="form-name" value="admission-enquiry">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="student-name">Student's Name</label>
+                        <input type="text" id="student-name" name="student-name" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
+                        <label for="parent-name">Parent's Name</label>
+                        <input type="text" id="parent-name" name="parent-name" required>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Any Specific Query</label>
-                        <textarea id="message" name="message" rows="4"></textarea>
-                    </div>
-                    <button type="submit" class="submit-button">Submit Enquiry</button>
-                </form>
-            </div>
-            <div class="enquiry-image">
-                <img src="images/admission-enquiry.jpg" alt="Admission Enquiry">
-                <div class="contact-overlay">
-                    <h3>Contact Admissions Office</h3>
-                    <p>Phone: +91-9694200694</p>
-                    <p>Email: admissions@dreamsschool.com</p>
-                    <p>Timings: Monday to Friday (9:00 AM - 3:00 PM)</p>
                 </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="grade-applying">Grade Applying For</label>
+                        <select id="grade-applying" name="grade-applying" required>
+                            <option value="">Select Class</option>
+                            <option value="Nursery">Nursery</option>
+                            <option value="LKG">LKG</option>
+                            <option value="UKG">UKG</option>
+                            <option value="I">Class I</option>
+                            <option value="II">Class II</option>
+                            <option value="III">Class III</option>
+                            <option value="IV">Class IV</option>
+                            <option value="V">Class V</option>
+                            <option value="VI">Class VI</option>
+                            <option value="VII">Class VII</option>
+                            <option value="VIII">Class VIII</option>
+                            <option value="IX">Class IX</option>
+                            <option value="X">Class X</option>
+                            <option value="XI">Class XI</option>
+                            <option value="XII">Class XII</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Contact Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Any Specific Query</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+                <button type="submit" class="submit-button">Submit Enquiry</button>
+            </form>
+        </div>
+        <div class="enquiry-image">
+            <img src="images/admission-enquiry.jpg" alt="Admission Enquiry">
+            <div class="contact-overlay">
+                <h3>Contact Admissions Office</h3>
+                <p>Phone: +91-9694200694</p>
+                <p>Email: admissions@dreamsschool.com</p>
+                <p>Timings: Monday to Friday (9:00 AM - 3:00 PM)</p>
             </div>
         </div>
     </div>
-
+</div>
     <footer>
         <div class="footer-content">
             <div class="footer-section">
