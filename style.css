@@ -1880,3 +1880,60 @@ input:focus, select:focus, textarea:focus {
         height: 250px;
     }
 }
+
+/* Google Form Centered Layout */
+.admission-enquiry-section {
+    padding: 60px 5%;
+    background: #f9f9f9;
+}
+
+.admission-enquiry-section h2 {
+    text-align: center;
+    color: var(--brand-blue);
+    margin-bottom: 40px;
+    font-size: 2.2em;
+}
+
+.google-form-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.google-form-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 150%; /* This controls the aspect ratio - adjust as needed */
+    overflow: hidden;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.google-form-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .google-form-wrapper {
+        padding-bottom: 120%; /* Less tall on larger screens */
+    }
+}
+
+@media (min-width: 992px) {
+    .google-form-wrapper {
+        padding-bottom: 100%; /* Even less tall on desktop */
+    }
+}
+
+@media (min-width: 1200px) {
+    .google-form-wrapper {
+        padding-bottom: 85%; /* Optimal height for large screens */
+    }
+}
