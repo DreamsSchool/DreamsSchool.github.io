@@ -1781,3 +1781,102 @@ input:focus, select:focus, textarea:focus {
         grid-template-columns: 1fr;
     }
 }
+
+/* Google Form Integration Styles */
+.google-form-container {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.google-form {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    height: 650px; /* Adjust height as needed */
+}
+
+.google-form iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.enquiry-contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contact-card {
+    background: var(--brand-blue);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.contact-card h3 {
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    text-align: center;
+    color: white;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.contact-icon {
+    margin-right: 15px;
+    font-style: normal;
+    font-size: 1.2em;
+}
+
+.enquiry-image {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    flex-grow: 1;
+}
+
+.enquiry-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+}
+
+@media (max-width: 992px) {
+    .google-form-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .google-form {
+        height: 700px; /* Slightly taller on mobile */
+    }
+    
+    .enquiry-contact-info {
+        flex-direction: row;
+    }
+    
+    .contact-card, .enquiry-image {
+        flex: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .enquiry-contact-info {
+        flex-direction: column;
+    }
+    
+    .enquiry-image {
+        height: 250px;
+    }
+}
