@@ -152,88 +152,34 @@
 
     <div class="admission-enquiry-section">
     <h2>Admission Enquiry</h2>
-    <div class="enquiry-container">
-        <div class="enquiry-form-wrapper">
-            <form name="admission-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="enquiry-form">
-                <p class="hidden">
-                    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-                </p>
-                <input type="hidden" name="form-name" value="admission-enquiry">
-                
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="student-name">Student's Name <span class="required">*</span></label>
-                        <input type="text" id="student-name" name="student-name" placeholder="Enter student's full name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="parent-name">Parent's Name <span class="required">*</span></label>
-                        <input type="text" id="parent-name" name="parent-name" placeholder="Enter parent's full name" required>
-                    </div>
-                
-                    <div class="form-group">
-                        <label for="grade-applying">Grade Applying For <span class="required">*</span></label>
-                        <select id="grade-applying" name="grade-applying" required>
-                            <option value="">Select Class</option>
-                            <option value="Nursery">Nursery</option>
-                            <option value="LKG">LKG</option>
-                            <option value="UKG">UKG</option>
-                            <option value="I">Class I</option>
-                            <option value="II">Class II</option>
-                            <option value="III">Class III</option>
-                            <option value="IV">Class IV</option>
-                            <option value="V">Class V</option>
-                            <option value="VI">Class VI</option>
-                            <option value="VII">Class VII</option>
-                            <option value="VIII">Class VIII</option>
-                            <option value="IX">Class IX</option>
-                            <option value="X">Class X</option>
-                            <option value="XI">Class XI</option>
-                            <option value="XII">Class XII</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Contact Number <span class="required">*</span></label>
-                        <input type="tel" id="phone" name="phone" placeholder="Enter 10-digit mobile number" required>
-                    </div>
-                </div>
-                
-                <div class="form-group full-width">
-                    <label for="email">Email Address <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-                </div>
-                
-                <div class="form-group full-width">
-                    <label for="message">Any Specific Query</label>
-                    <textarea id="message" name="message" rows="4" placeholder="Please share any specific questions or information about the student"></textarea>
-                </div>
-                
-                <div class="form-footer">
-                    <p class="form-note"><span class="required">*</span> Indicates required fields</p>
-                    <button type="submit" class="submit-button">Submit Enquiry</button>
-                </div>
-            </form>
-            
-            <div class="contact-info-card">
+    <div class="google-form-container">
+        <div class="google-form">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf_AbFAnNP1TCjS2I9R00XPZWNBOmb5kPeKKPvr2sgpf_nc2w/viewform?embedded=true" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0">
+                Loading…
+            </iframe>
+        </div>
+        <div class="enquiry-contact-info">
+            <div class="contact-card">
                 <h3>Contact Admissions Office</h3>
-                <div class="contact-info-item">
+                <div class="contact-item">
                     <i class="contact-icon">📞</i>
                     <p>+91-9694200694</p>
                 </div>
-                <div class="contact-info-item">
+                <div class="contact-item">
                     <i class="contact-icon">✉️</i>
-                    <p>dreamsschooljaipur@gmail.com</p>
+                    <p>admissions@dreamsschool.com</p>
                 </div>
-                <div class="contact-info-item">
+                <div class="contact-item">
                     <i class="contact-icon">🕒</i>
-                    <p>Monday to Friday (9:00 AM - 2:00 PM)</p>
+                    <p>Monday to Friday (9:00 AM - 3:00 PM)</p>
                 </div>
             </div>
-        </div>
-        
-        <div class="enquiry-image">
-            <img src="images/admission-enquiry.jpg" alt="Admission Enquiry">
+            <div class="enquiry-image">
+                <img src="images/admission-enquiry.jpg" alt="Admission Enquiry">
+            </div>
         </div>
     </div>
 </div>
