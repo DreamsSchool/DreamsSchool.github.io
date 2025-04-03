@@ -1880,3 +1880,17 @@ input:focus, select:focus, textarea:focus {
         height: 250px;
     }
 }
+   @media (max-width: 768px) {
+     .nav-links li a, 
+     .social-button, 
+     .view-more, 
+     .submit-button {
+       padding: 15px 20px; /* Larger tap area */
+       margin: 5px 0; /* Space between items */
+     }
+     
+     .gallery-filters button {
+       padding: 12px 20px;
+       margin: 5px;
+     }
+   }
