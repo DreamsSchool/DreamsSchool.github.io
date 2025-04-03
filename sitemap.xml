@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.dreamsschool.com/</loc>
+    <loc>https://dreams-school.netlify.app/</loc>
     <lastmod>2023-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.dreamsschool.com/about.html</loc>
+    <loc>https://dreams-school.netlify.app/about.html</loc>
     <lastmod>2023-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.dreamsschool.com/academics.html</loc>
+    <loc>https://dreams-school.netlify.app/academics.html</loc>
     <lastmod>2023-07-15</lastmod>
     <changefreq>quarterly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.dreamsschool.com/facilities.html</loc>
+    <loc>https://dreams-school.netlify.app/facilities.html</loc>
     <lastmod>2023-07-15</lastmod>
     <changefreq>quarterly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.dreamsschool.com/admissions.html</loc>
+    <loc>https://dreams-school.netlify.app/admissions.html</loc>
     <lastmod>2023-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.dreamsschool.com/gallery.html</loc>
+    <loc>https://dreams-school.netlify.app/gallery.html</loc>
     <lastmod>2023-07-15</lastmod>
     <changefreq>quarterly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.dreamsschool.com/contact.html</loc>
+    <loc>https://dreams-school.netlify.app/contact.html</loc>
     <lastmod>2023-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
