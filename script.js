@@ -1,38 +1,47 @@
 // script.js
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Navigation Toggle
+    // ── Mobile Navigation Drawer ──
     const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    
+    const navLinks   = document.querySelector('.nav-links');
+    const overlay    = document.getElementById('navOverlay');
+    const navClose   = document.getElementById('navClose');
+
+    function openMenu() {
+        navLinks.classList.add('show');
+        overlay.classList.add('show');
+        menuToggle.classList.add('open');
+        menuToggle.setAttribute('aria-expanded', 'true');
+        menuToggle.setAttribute('aria-label', 'Close navigation menu');
+        document.body.style.overflow = 'hidden'; // prevent background scroll
+    }
+
+    function closeMenu() {
+        navLinks.classList.remove('show');
+        overlay.classList.remove('show');
+        menuToggle.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Open navigation menu');
+        document.body.style.overflow = '';
+    }
+
     menuToggle.addEventListener('click', function() {
-        navLinks.classList.toggle('show');
-        const isOpen = navLinks.classList.contains('show');
-        // Change menu icon
-        const menuIcon = this.querySelector('.menu-icon');
-        menuIcon.textContent = isOpen ? '✕' : '☰';
-        // Update accessibility attribute
-        this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        this.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+        navLinks.classList.contains('show') ? closeMenu() : openMenu();
     });
 
-    // Close menu when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!e.target.closest('.nav-links') && !e.target.closest('.menu-toggle')) {
-            navLinks.classList.remove('show');
-            document.querySelector('.menu-icon').textContent = '☰';
-            menuToggle.setAttribute('aria-expanded', 'false');
-            menuToggle.setAttribute('aria-label', 'Open navigation menu');
-        }
-    });
+    // Close via overlay click
+    if (overlay) overlay.addEventListener('click', closeMenu);
 
-    // Close menu when clicking a link
+    // Close via ✕ button inside drawer
+    if (navClose) navClose.addEventListener('click', closeMenu);
+
+    // Close when a nav link is tapped
     document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('show');
-            document.querySelector('.menu-icon').textContent = '☰';
-            menuToggle.setAttribute('aria-expanded', 'false');
-            menuToggle.setAttribute('aria-label', 'Open navigation menu');
-        });
+        link.addEventListener('click', closeMenu);
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeMenu();
     });
 
     // Announcement Slider
