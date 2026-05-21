@@ -1,47 +1,30 @@
 // script.js
 document.addEventListener('DOMContentLoaded', function() {
-    // ── Mobile Navigation Drawer ──
+    // Mobile Navigation Toggle
     const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks   = document.querySelector('.nav-links');
-    const overlay    = document.getElementById('navOverlay');
-    const navClose   = document.getElementById('navClose');
-
-    function openMenu() {
-        navLinks.classList.add('show');
-        overlay.classList.add('show');
-        menuToggle.classList.add('open');
-        menuToggle.setAttribute('aria-expanded', 'true');
-        menuToggle.setAttribute('aria-label', 'Close navigation menu');
-        document.body.style.overflow = 'hidden'; // prevent background scroll
-    }
-
-    function closeMenu() {
-        navLinks.classList.remove('show');
-        overlay.classList.remove('show');
-        menuToggle.classList.remove('open');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        menuToggle.setAttribute('aria-label', 'Open navigation menu');
-        document.body.style.overflow = '';
-    }
-
+    const navLinks = document.querySelector('.nav-links');
+    
     menuToggle.addEventListener('click', function() {
-        navLinks.classList.contains('show') ? closeMenu() : openMenu();
+        navLinks.classList.toggle('show');
+        // Change menu icon
+        const menuIcon = this.querySelector('.menu-icon');
+        menuIcon.textContent = navLinks.classList.contains('show') ? '✕' : '☰';
     });
 
-    // Close via overlay click
-    if (overlay) overlay.addEventListener('click', closeMenu);
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.nav-links') && !e.target.closest('.menu-toggle')) {
+            navLinks.classList.remove('show');
+            document.querySelector('.menu-icon').textContent = '☰';
+        }
+    });
 
-    // Close via ✕ button inside drawer
-    if (navClose) navClose.addEventListener('click', closeMenu);
-
-    // Close when a nav link is tapped
+    // Close menu when clicking a link
     document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', closeMenu);
-    });
-
-    // Close on Escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') closeMenu();
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('show');
+            document.querySelector('.menu-icon').textContent = '☰';
+        });
     });
 
     // Announcement Slider
