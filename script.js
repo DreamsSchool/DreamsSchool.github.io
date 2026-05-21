@@ -6,9 +6,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     menuToggle.addEventListener('click', function() {
         navLinks.classList.toggle('show');
+        const isOpen = navLinks.classList.contains('show');
         // Change menu icon
         const menuIcon = this.querySelector('.menu-icon');
-        menuIcon.textContent = navLinks.classList.contains('show') ? '✕' : '☰';
+        menuIcon.textContent = isOpen ? '✕' : '☰';
+        // Update accessibility attribute
+        this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        this.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
     });
 
     // Close menu when clicking outside
@@ -16,6 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!e.target.closest('.nav-links') && !e.target.closest('.menu-toggle')) {
             navLinks.classList.remove('show');
             document.querySelector('.menu-icon').textContent = '☰';
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Open navigation menu');
         }
     });
 
@@ -24,6 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', () => {
             navLinks.classList.remove('show');
             document.querySelector('.menu-icon').textContent = '☰';
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Open navigation menu');
         });
     });
 
