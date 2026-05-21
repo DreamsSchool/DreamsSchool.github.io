@@ -93,155 +93,59 @@ body {
     color: var(--brand-light-blue);
 }
 
-/* ═══════════════════════════════════════
-   HAMBURGER BUTTON  (hidden on desktop)
-═══════════════════════════════════════ */
+/* Mobile Menu Styles */
 .menu-toggle {
     display: none;
     cursor: pointer;
-    background: none;
-    border: none;
-    padding: 8px;
-    z-index: 2001;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
+    font-size: 1.5em;
+    padding: 10px;
 }
-.menu-toggle .bar {
-    display: block;
-    width: 26px;
-    height: 2px;
-    background: var(--brand-blue);
-    border-radius: 2px;
-    transition: all 0.3s ease;
-    transform-origin: center;
+
+.menu-icon {
+    color: var(--brand-blue);
 }
-.menu-toggle.open .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.menu-toggle.open .bar:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.menu-toggle.open .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* ═══════════════════════════════════════
-   DARK OVERLAY
-═══════════════════════════════════════ */
-.nav-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.55);
-    z-index: 1500;
-    opacity: 0;
-    transition: opacity 0.35s ease;
-}
-.nav-overlay.show { display: block; opacity: 1; }
-
-/* ═══════════════════════════════════════
-   MOBILE NAVIGATION DRAWER
-═══════════════════════════════════════ */
-@media (max-width: 1024px) {
-
-    .menu-toggle { display: flex; }
-
-    .main-nav {
-        height: var(--header-height);
-        padding: 0 5%;
-        justify-content: space-between;
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
     }
-    .nav-brand { flex-direction: row; align-items: center; gap: 10px; }
-    .school-logo  { height: 40px; }
-    .nav-header   { font-size: 1em; }
 
-    /* THE DRAWER — slides in from right */
     .nav-links {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: min(85vw, 340px);
-        height: 100vh;
-        height: 100dvh;
-        z-index: 1800;
-
-        display: flex !important;
+        display: none;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        background: white;
         flex-direction: column;
-        padding-top: 0;
+        padding: 0;
         margin: 0;
-        list-style: none;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
 
-        background: var(--brand-blue);
-        transform: translateX(110%);
-        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: -4px 0 24px rgba(0,0,0,0.25);
-    }
-    .nav-links.show { transform: translateX(0); }
-
-    /* Close button row at top of drawer */
-    .nav-drawer-close {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 18px 22px 14px;
-        flex-shrink: 0;
-        border-bottom: 1px solid rgba(255,255,255,0.15);
-    }
-    .nav-drawer-close span {
-        color: rgba(255,255,255,0.9);
-        font-size: 0.8em;
-        font-weight: 600;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-    }
-    .nav-drawer-close button {
-        background: none;
-        border: none;
-        color: rgba(255,255,255,0.75);
-        font-size: 1.8em;
-        cursor: pointer;
-        line-height: 1;
-        padding: 0 4px;
-        transition: color 0.2s;
-    }
-    .nav-drawer-close button:hover { color: #fff; }
-
-    /* Each list item */
     .nav-links li {
         width: 100%;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-        flex-shrink: 0;
+        border-bottom: 1px solid #eee;
     }
-    .nav-links li:last-child { border-bottom: none; }
 
-    /* Link tap targets */
     .nav-links li a {
+        display: block;
+        padding: 15px 20px;
+        text-align: left;
+    }
+
+    .nav-links.show {
         display: flex;
-        align-items: center;
+    }
+
+    .main-nav {
         justify-content: space-between;
-        padding: 18px 26px;
-        font-size: 1em;
-        font-weight: 500;
-        letter-spacing: 1px;
-        color: rgba(255,255,255,0.85);
-        text-decoration: none;
-        transition: background 0.2s, color 0.2s, padding-left 0.2s;
     }
-    /* Arrow chevron on each row */
-    .nav-links li a::after {
-        content: '›';
-        font-size: 1.5em;
-        opacity: 0.45;
-        transition: opacity 0.2s, transform 0.2s;
-        position: static;
-        width: auto;
-        height: auto;
-        background: none;
+
+    .nav-brand {
+        flex-direction: row;
+        align-items: center;
     }
-    .nav-links li a:hover {
-        background: rgba(255,255,255,0.1);
-        color: #fff;
-        padding-left: 32px;
-    }
-    .nav-links li a:hover::after { opacity: 1; transform: translateX(4px); }
 }
 
 /* Hero Section */
@@ -706,8 +610,35 @@ footer {
     }
 }
 
-@media (max-width: 1024px) {
-    /* nav rules consolidated in the Mobile Navigation block above */
+@media (max-width: 768px) {
+    .nav-brand {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .school-logo {
+        height: 40px;
+    }
+
+    .nav-header {
+        font-size: 1.1em;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
 
     .hero-section h1 {
         font-size: 2.5em;
