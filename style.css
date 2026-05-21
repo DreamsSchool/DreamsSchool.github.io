@@ -112,7 +112,7 @@ body {
 }
 
 /* ── Mobile Navigation ── */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 
     /* Show hamburger button */
     .menu-toggle {
@@ -670,7 +670,7 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     /* nav rules consolidated in the Mobile Navigation block above */
 
     .hero-section h1 {
