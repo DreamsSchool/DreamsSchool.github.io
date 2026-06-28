@@ -1046,6 +1046,10 @@ input:focus, select:focus, textarea:focus {
     background: #4267B2;
 }
 
+.social-button.instagram {
+    background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+}    
+
 .social-button:hover {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
